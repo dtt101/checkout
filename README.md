@@ -23,8 +23,17 @@ bundle install
 bundle exec ruby spec/checkout_spec.rb
 ```
 
+## Usage
+
+```
+# TODO: promo rules creation
+co = Checkout.new(promotional_rules)
+co.scan(item)
+co.scan(item)
+price = co.total
+```
+
 ## TODO
 
 - PromotionalRule
 - Checkout
-- Item
