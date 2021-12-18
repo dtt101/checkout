@@ -27,6 +27,4 @@ bundle exec ruby spec/checkout_spec.rb
 
 - PromotionalRule
 - Checkout
-- Product
-- Basket
-- BasketItem
+- Item

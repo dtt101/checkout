@@ -11,16 +11,12 @@ describe Checkout do
   end
 
   describe "#scan" do
-    it "adds a new item and returns true if the item is available" do
+    it "adds a new item" do
       co = Checkout.new({})
       item = Item.new("001", "Lavender heart", 9.25)
-      _(co.scan(item)).must_equal true
-    end
-
-    it "does not add a new item and returns false if the item is unavailable" do
-      co = Checkout.new({})
-      item = Item.new("666", "Real Unicorn Horn", 100.25)
-      _(co.scan(item)).must_equal false      
+      _(co.items.length()).must_equal 0
+      co.scan(item)
+      _(co.items.length()).must_equal 1
     end
   end
 

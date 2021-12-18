@@ -1,9 +1,13 @@
 class Checkout
+
+  attr_reader :items
+
   def initialize(promotional_rules)
-    
+    @items = []
   end
 
   def scan(item) 
-    return true
+    @items.push(item)
   end
+
 end
