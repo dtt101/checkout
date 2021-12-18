@@ -67,4 +67,24 @@ describe Checkout do
     end    
   end
 
+  describe "#total with multiple item promotional rules" do
+    before do
+      @heart = Item.new("001", "Lavender heart", 9.25)
+      @cufflinks = Item.new("002", "Personalised cufflinks", 45.00)
+      @tshirt = Item.new("003", "Kids T-shirt", 19.95)
+      @promotional_rules = [
+        DiscountTotalRule.new(applies_to: :total, minimum_spend: 60, discount_percentage: 10),
+        DiscountItemRule.new(applies_to: :item, item_code: "001", item_discount_price: 8.50, minimum_item_count: 2),
+        DiscountItemRule.new(applies_to: :item, item_code: "003", item_discount_price: 5.00, minimum_item_count: 2)
+      ]
+    end
+
+    it "correctly calculates the discounts for items 003,003,001" do
+      co = Checkout.new(@promotional_rules)
+      co.scan(@tshirt)
+      co.scan(@tshirt)
+      co.scan(@heart)
+      _(co.total()).must_equal "£19.25"
+    end    
+  end
 end

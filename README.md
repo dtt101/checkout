@@ -19,6 +19,8 @@ bundle install
 
 ## Run tests
 
+The specific tests for the use cases in the challenge can be found in `spec/checkout_spec.rb`
+
 ```
 rake test
 ```
@@ -39,5 +41,4 @@ price = co.total
 
 ## TODO
 
-- Apply multiple item rules
 - Tests for individual rules
