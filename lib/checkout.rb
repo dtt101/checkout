@@ -10,4 +10,8 @@ class Checkout
     @items.push(item)
   end
 
+  def total
+    @items.map(&:price).sum
+  end
+
 end

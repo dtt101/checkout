@@ -20,6 +20,15 @@ describe Checkout do
     end
   end
 
+  describe "#total" do
+    it "calculates the total price" do
+      co = Checkout.new({})
+      co.scan(Item.new("001", "Lavender heart", 9.25))
+      co.scan(Item.new("002", "Unicorn", 0.25))
+      _(co.total()).must_equal 9.50
+    end
+  end
+
 end
 
 
