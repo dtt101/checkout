@@ -20,13 +20,17 @@ bundle install
 ## Run tests
 
 ```
-bundle exec ruby spec/checkout_spec.rb
+rake test
 ```
 
 ## Usage
 
+The checkout class can be created with promotional rules that apply to scanned items
+
 ```
-# TODO: promo rules creation
+promotional_rules = [
+  DiscountTotalRule.new(applies_to: :total, minimum_spend: 60, discount_percentage: 10)
+]
 co = Checkout.new(promotional_rules)
 co.scan(item)
 co.scan(item)
@@ -35,5 +39,5 @@ price = co.total
 
 ## TODO
 
-- PromotionalRule
-- Checkout
+- Apply multiple item rules
+- Tests for individual rules
