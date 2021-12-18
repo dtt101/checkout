@@ -2,14 +2,31 @@
 
 This repo contains a Checkout based coding challenge and a response. More details on the challenge can be found in `docs/checkout.md`
 
-## Installation
+## Dependencies
 
 The challenge response is written in Ruby.
 
 Use a version manager to get the version of Ruby required - examples include [RVM](https://rvm.io/), [rbenv](https://github.com/rbenv/rbenv) and [Frum](https://github.com/tako8ki/frum)
 
-Note the task specifies asks for version `2.6.6p146` which is not available via rbenv so `2.6.6` has been specified in `.ruby-version`. If required the more specific version can be [downloaded and compiled](https://github.com/rbenv/rbenv#installing-ruby-versions).
+Note the task specifies asks for version `2.6.6p146` which is available via rbenv as `2.6.6`.
+
+## Installation
+
+```
+git clone https://github.com/dtt101/checkout.git
+bundle install
+```
 
 ## Run tests
 
-TODO
+```
+bundle exec ruby spec/checkout_spec.rb
+```
+
+## TODO
+
+- PromotionalRule
+- Checkout
+- Product
+- Basket
+- BasketItem
