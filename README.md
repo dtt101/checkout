@@ -38,7 +38,3 @@ co.scan(item)
 co.scan(item)
 price = co.total
 ```
-
-## TODO
-
-- Tests for individual rules
