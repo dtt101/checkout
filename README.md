@@ -8,7 +8,7 @@ The challenge response is written in Ruby.
 
 Use a version manager to get the version of Ruby required - examples include [RVM](https://rvm.io/), [rbenv](https://github.com/rbenv/rbenv) and [Frum](https://github.com/tako8ki/frum)
 
-Note the task specifies asks for version `2.6.6p146` which is available via rbenv as `2.6.6`.
+Note the task specifies version `2.6.6p146` which is available via rbenv as `2.6.6`.
 
 ## Installation
 
